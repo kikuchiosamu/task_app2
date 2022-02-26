@@ -1,0 +1,40 @@
+<h3>スケジュール詳細</h3>
+
+<table>
+  <tr>
+    <th>タイトル</th>
+    <td><%= @plan.title %></td>
+  </tr>
+
+  <tr>
+    <th>開始日</th>
+    <td><%= @plan.start %></td>
+  </tr>
+
+  <tr>
+    <th>終了日</th>
+    <td><%= @plan.end %></td>
+  </tr>
+
+  <tr>
+    <th>終日</th>
+    <td><% if @plan.allday == true %>
+              ○
+            <% else @plan.allday == false %>
+
+            <% end %>
+    </td>
+  </tr>
+
+  <tr>
+    <th>スケジュールメモ</th>
+    <td><%= @plan.memo %></td>
+  </tr>
+</table>
+
+<div>
+  <ul>
+    <li><%= link_to "編集する", edit_plan_path %></li>
+    <li><%= link_to "スケジュール一覧に戻る", :plans %></li>
+  </ul>
+</div>
